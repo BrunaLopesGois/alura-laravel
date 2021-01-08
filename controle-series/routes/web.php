@@ -9,3 +9,4 @@ Route::delete('/series/{id}', 'SeriesController@destroy');
 
 Route::get('/series/{serieId}/temporadas', 'TemporadasController@index')
     ->name('exibir_temporadas');
+Route::post('/series/{id}/editaNome', 'SeriesController@editaNome');
