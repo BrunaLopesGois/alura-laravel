@@ -23,8 +23,7 @@ class EpisodiosController extends Controller
     {
 
         $episodiosAssistidos = $request->episodios;
-        $temporada->episodios->each(function (Episodio $episodio)
-        use ($episodiosAssistidos) {
+        $temporada->episodios->each(function (Episodio $episodio) use ($episodiosAssistidos) {
             if (!empty($episodiosAssistidos)) {
                 $episodio->assistido = in_array($episodio->id, $episodiosAssistidos);
             }
