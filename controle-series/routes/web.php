@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\Autenticador;
+use App\Mail\NovaSerie;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/series', 'SeriesController@index')
@@ -32,4 +33,8 @@ Route::post('/registrar', 'RegistroController@store');
 Route::get('/sair', function () {
     Auth::logout();
     return redirect('/entrar');
+});
+
+Route::get('/visualizar-email', function () {
+    return new NovaSerie('Arrow', 6, 12);
 });
